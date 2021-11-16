@@ -7,11 +7,12 @@ args = parser.parse_args()
 val = args.val
 
 
-def return_type(i):
-    a=type(i)
-    return(a)
+def clean_text(i):
+    lower_text=i.lower()
+    size_text=len(i)
+    return(lower_text, size_text)
     
-print(return_type(val))
+print(clean_text(val))
 
 
 
