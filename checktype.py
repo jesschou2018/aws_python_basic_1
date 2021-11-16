@@ -8,9 +8,11 @@ val = args.val
 
 
 def clean_text(i):
+    all_words=i.split()
     lower_text=i.lower()
     size_text=len(i)
-    return(lower_text, size_text)
+    word_count=len(all_words)
+    return(lower_text, size_text, all_words, word_count)
     
 print(clean_text(val))
 
