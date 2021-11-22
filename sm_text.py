@@ -29,10 +29,3 @@ class sm_text:
       at_list_loc = [i for i, e in enumerate(at_locations) if e == 0]
       at_values=[all_words[i] for i in at_list_loc]
       return(at_values)
-
-
-text1 = sm_text("look at my i can #hashtag1 #hashtag2 and @person AND @PERSON2")
-print(text1.extract_at_tags())
-print(text1.extract_hashtags())
-      
-
