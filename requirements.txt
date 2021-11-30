@@ -1,0 +1,6 @@
+argparse
+pylint
+pytest
+click
+pytest-cov
+black
