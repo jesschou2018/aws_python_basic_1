@@ -8,3 +8,5 @@ tweepy
 pandas
 numpy
 python-dotenv
+networkx
+matplotlib
