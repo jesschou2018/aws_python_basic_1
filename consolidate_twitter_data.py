@@ -37,28 +37,27 @@ for key in userdict.keys():
     data_users.append(usernetwork_df)
 
 
-# Tidy up our tweets - we use the following list appending for performance reasons, so need to split it out
-
-data_tweets_df= pd.concat([data_tweets[0]["id"],
-data_tweets[0]["created_at"],
-data_tweets[0]["favorite_count"],
-data_tweets[0]["retweet_count"],
-data_tweets[0]["text"],
-data_tweets[0]["from"]],axis=1)
+# At present most effective way to consolidate DataFrames  - toreview.
+user_list=[]
+tweet_list=[]
+list_iter = [j for j in range(5)]
 
 
+for i in list_iter:
+    user_list.append(data_users[i])
+    
+for k in list_iter:
+    tweet_list.append(data_tweets[k])  
+    
 
-#data_users_df=  pd.DataFrame(data_users, columns["source","target"])
+data_tweets_df=pd.concat(tweet_list, axis=0)
 data_tweets_df["at_tags"] =data_tweets_df["text"].apply(lambda x:(sm_text.extract_at_tags(sm_text(x))))
 data_tweets_df["hash_tags"] =data_tweets_df["text"].apply(lambda x:(sm_text.extract_hashtags(sm_text(x))))
-# don't drop text for now - might need it. data_tweets_df = data_tweets_df.drop("text", 1)
 
+# tidy up our users_df
 
-# Tidy up our user/follower DataFrame
-
-data_users_df= pd.concat([data_users[0]["Source"],
-data_users[0]["Target"]],axis=1)
-
+data_users_df=  pd.concat(user_list, axis=0)
+print(data_users_df.head(10))
 
 data_users_df.to_csv("all_users.csv")
 data_tweets_df.to_csv("all_tweets.csv")
