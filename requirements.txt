@@ -4,3 +4,10 @@ pytest
 click
 pytest-cov
 black
+tweepy
+pandas
+numpy
+python-dotenv
+networkx
+matplotlib
+scipy

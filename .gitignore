@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# env 
+.env
+*.csv
+done.txt
+Graph1.png
