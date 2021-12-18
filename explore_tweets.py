@@ -24,6 +24,22 @@ ax=sns.scatterplot(x="att_infl", y= "infl", data=user_tweets_summary, hue="from"
 
 
 # try one of the following
-fig = ax.get_figure()
+#fig = ax.get_figure()
 
-fig.savefig('figure.pdf')
+#fig.savefig('figure.pdf')
+
+sns.set_theme()
+
+# Load the penguins dataset
+
+# Plot sepal width as a function of sepal_length across days
+g = sns.lmplot(
+    data=user_tweets_summary,
+    x="att_infl", y= "infl", hue="from",col="from",
+    height=5
+)
+
+# Use more informative axis labels than are provided by default
+g.set_axis_labels("attempted influence", "actual influence")
+
+g.savefig('figure.pdf')
