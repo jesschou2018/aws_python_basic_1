@@ -21,7 +21,7 @@ print(our_data_users_df.reset_index(drop=True).equals(pd.read_csv("test_all_user
 
 print(our_data_users_df.reset_index(drop=True).head(10))
 print(pd.read_csv("test_all_users.csv").head(10))
-#print(our_data_tweets_df.equals(pd.read_csv("test_all_tweets.csv")))
+print(our_data_tweets_df.equals(pd.read_csv("test_all_tweets.csv")))
 
 
 

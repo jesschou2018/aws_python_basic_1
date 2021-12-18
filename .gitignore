@@ -133,3 +133,5 @@ dmypy.json
 *.csv
 done.txt
 Graph1.png
+figure.png
+users_to_examine.txt
