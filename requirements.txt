@@ -13,3 +13,4 @@ matplotlib
 scipy
 plotly==5.4.0
 seaborn
+wordcloud
