@@ -14,16 +14,18 @@ with open('test_users_to_examine.txt') as f:
 # reconstructing the users as a dictionary
 our_userdict = json.loads(data)
 
-our_data_users_df=consolidate_users_network(our_userdict)
-our_data_tweets_df=consolidate_tweets(our_userdict)
+# test 1 - users are conslidated correctly 
 
+our_data_users_df=consolidate_users_network(our_userdict)
 print(our_data_users_df.reset_index(drop=True).equals(pd.read_csv("test_all_users.csv")))
 
-print(our_data_users_df.reset_index(drop=True).head(10))
-print(pd.read_csv("test_all_users.csv").head(10))
-print(our_data_tweets_df.equals(pd.read_csv("test_all_tweets.csv")))
-
-
-
-
+# test 2 - tweets are conslidated correctly 
+our_data_tweets_df=consolidate_tweets(our_userdict).reset_index(drop=True)
+test_data_tweets_df=pd.read_csv("test_all_tweets.csv").reset_index(drop=True)
+print(our_data_tweets_df.head(20))
+print(test_data_tweets_df.head(10))
+print(our_data_tweets_df.equals(test_data_tweets_df))
+print(our_data_tweets_df["hash_tags"].equals(test_data_tweets_df["hash_tags"]))
+print(our_data_tweets_df.dtypes)
+print(test_data_tweets_df.dtypes)
 
