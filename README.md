@@ -1,8 +1,8 @@
-## aws_python_basic_1
-## Basic python application on aws
+## aws_python_basic_1 - Basic python application on aws
 
-## CheckPoint 3 represents moving from a simple application to using a Make File and testing.
-- we illustration
+CheckPoint 3 represents moving from a simple application to using a Make File and testing.
+
+We illustrate:
 
 i) Creating each of the requirements.txt, test function for sm_text (test_sm_text.py) and make files
 
