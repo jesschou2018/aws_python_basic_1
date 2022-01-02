@@ -134,6 +134,6 @@ dmypy.json
 done.txt
 Graph1.png
 figure.pdf
-users_to_examine.txt
+in_data_users_to_examine.txt
 *.pdf
 *.png

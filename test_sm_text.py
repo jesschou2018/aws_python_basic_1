@@ -21,3 +21,4 @@ def test_extract_hashtags():
 
 def test_extract_at_tags():
     assert sm_text.extract_at_tags(checkval) == ["@text", "@things"]
+    
